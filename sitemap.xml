@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO: 도메인이 확정되면 hanbokgoong.com 부분을 실제 주소로 바꾸세요 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.hanbokgoong.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.hanbokgoong.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hanbokgoong.com/en/"/>
+    <changefreq>monthly</changefreq><priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.hanbokgoong.com/fashion-show.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hanbokgoong.com/en/fashion-show.html"/>
+    <changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.hanbokgoong.com/model-contest.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hanbokgoong.com/en/model-contest.html"/>
+    <changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.hanbokgoong.com/honju.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hanbokgoong.com/en/honju.html"/>
+    <changefreq>monthly</changefreq><priority>0.9</priority>
+  </url>
+  <url><loc>https://www.hanbokgoong.com/en/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.hanbokgoong.com/en/fashion-show.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.hanbokgoong.com/en/model-contest.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.hanbokgoong.com/en/honju.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+</urlset>
