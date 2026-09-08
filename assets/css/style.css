@@ -670,6 +670,22 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:500;line-height:1.34;lette
 .footer h5{font-family:var(--font-en);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--seal);margin-bottom:18px;font-weight:600;}
 .footer__list{display:grid;gap:11px;font-size:14px;color:var(--ivory-52);}
 .footer__list a:hover{color:var(--ivory);}
+
+/* 회사소개 PDF 다운로드 */
+.footer__pdf{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:6px;padding:9px 15px;border-radius:999px;
+  border:1px solid rgba(201,169,106,.45);
+  color:var(--gold-soft);font-weight:600;
+  transition:background .3s,border-color .3s,color .3s,transform .3s var(--ease);
+}
+.footer__pdf::before{content:"\2193";font-size:13px;}
+.footer__pdf span{font-size:11.5px;font-weight:500;color:var(--ivory-38);letter-spacing:.02em;}
+.footer__pdf:hover{
+  background:rgba(201,169,106,.12);border-color:var(--gold);
+  color:var(--gold-soft);transform:translateY(-2px);
+}
+.footer__pdf:hover span{color:var(--ivory-52);}
 .footer__bottom{
   margin-top:clamp(38px,5vw,60px);padding-top:26px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between;
