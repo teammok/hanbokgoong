@@ -671,21 +671,6 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:500;line-height:1.34;lette
 .footer__list{display:grid;gap:11px;font-size:14px;color:var(--ivory-52);}
 .footer__list a:hover{color:var(--ivory);}
 
-/* 회사소개 PDF 다운로드 */
-.footer__pdf{
-  display:inline-flex;align-items:center;gap:8px;
-  margin-top:6px;padding:9px 15px;border-radius:999px;
-  border:1px solid rgba(201,169,106,.45);
-  color:var(--gold-soft);font-weight:600;
-  transition:background .3s,border-color .3s,color .3s,transform .3s var(--ease);
-}
-.footer__pdf::before{content:"\2193";font-size:13px;}
-.footer__pdf span{font-size:11.5px;font-weight:500;color:var(--ivory-38);letter-spacing:.02em;}
-.footer__pdf:hover{
-  background:rgba(201,169,106,.12);border-color:var(--gold);
-  color:var(--gold-soft);transform:translateY(-2px);
-}
-.footer__pdf:hover span{color:var(--ivory-52);}
 .footer__bottom{
   margin-top:clamp(38px,5vw,60px);padding-top:26px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;justify-content:space-between;
@@ -709,24 +694,21 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:500;line-height:1.34;lette
 .socials .s-yt:hover{background:#FF0000;border-color:transparent;color:#fff;box-shadow:0 8px 20px -8px rgba(255,0,0,.6);}
 .socials a:hover{transform:translateY(-2px);}
 
-/* 회사소개 PDF — 소셜 아이콘 오른쪽에 알약형으로 */
+/* 회사소개 PDF — 소셜 아이콘과 같은 높이·톤의 알약형 (튀지 않게) */
 .socials .footer__pdf{
-  width:auto;height:40px;border-radius:999px;
-  display:inline-flex;align-items:center;gap:8px;padding:0 17px;
-  border:1px solid rgba(201,169,106,.45);
-  color:var(--gold-soft);font-size:13px;font-weight:600;
-  margin-left:4px;
+  width:auto;height:40px;padding:0 16px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:7px;
+  white-space:nowrap;
+  border:1px solid var(--line);
+  color:var(--ivory-52);font-size:12.5px;font-weight:500;letter-spacing:-.01em;
 }
-.socials .footer__pdf::before{content:"\2193";font-size:12px;}
-.socials .footer__pdf span{font-size:11px;font-weight:500;color:var(--ivory-38);}
+.socials .footer__pdf::before{content:"\2193";font-size:12px;opacity:.75;}
+.socials .footer__pdf span{font-size:11px;font-weight:400;color:var(--ivory-38);}
 .socials .footer__pdf:hover{
-  background:rgba(201,169,106,.14);border-color:var(--gold);color:var(--gold-soft);
-  box-shadow:0 8px 20px -8px rgba(201,169,106,.5);
+  border-color:var(--line-strong);color:var(--ivory);background:rgba(243,238,228,.04);
+  box-shadow:none;
 }
 .socials .footer__pdf:hover span{color:var(--ivory-52);}
-@media (max-width:560px){
-  .socials .footer__pdf{margin-left:0;}
-}
 
 /* --------------------------------------------------------------------------
    17. 플로팅 버튼
