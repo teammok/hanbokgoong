@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>한복궁 — 테마 4안 비교</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Song+Myung&family=Nanum+Myeongjo:wght@400;700&family=Marcellus&family=Gothic+A1:wght@100;200;300;400;500;700&family=Jost:wght@200;300;400;500&family=Hahmlet:wght@300;400;500;600;700;800;900&family=IBM+Plex+Sans+KR:wght@200;300;400;500;600&family=Archivo+Black&display=swap">
+
+<style>
+/* ═══════════════ 프리뷰 셸 ═══════════════ */
+*,*::before,*::after{box-sizing:border-box;}
+body{margin:0;background:#101012;color:#EDEAE3;
+  font-family:"Pretendard Variable",Pretendard,"Malgun Gothic",sans-serif;word-break:keep-all;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;}
+ul{margin:0;padding:0;list-style:none;}
+h1,h2,h3,h4,p,figure,blockquote{margin:0;}
+
+.bar{position:sticky;top:0;z-index:99;background:rgba(16,16,18,.96);
+  backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.12);}
+.bar__in{max-width:1400px;margin:0 auto;padding:11px clamp(14px,3vw,32px);
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.bar__lab{font-size:10.5px;letter-spacing:.28em;color:rgba(237,234,227,.38);}
+.picks{display:flex;gap:7px;flex-wrap:wrap;}
+.pick{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:7px 15px;
+  font-size:12.5px;color:rgba(237,234,227,.60);transition:.18s;display:flex;align-items:center;gap:7px;}
+.pick i{width:8px;height:8px;border-radius:50%;font-style:normal;}
+.pick:hover{color:#fff;border-color:rgba(255,255,255,.42);}
+.pick[aria-pressed="true"]{background:#F3EEE4;color:#101012;border-color:#F3EEE4;font-weight:600;}
+.bar__note{margin-left:auto;font-size:11.5px;color:rgba(237,234,227,.40);text-align:right;}
+.bar__note b{color:#EDEAE3;font-weight:600;}
+
+.t{display:none;}
+.t.on{display:block;}
+
+/* ══════════════════════════════════════════════════════════════════════
+   01  宮 NOIR — 현재 사이트
+   구조: 가로 상단바 · 전면사진 히어로 · 좌측정렬 대형제목 · 3열 카드
+   ══════════════════════════════════════════════════════════════════════ */
+.t1{background:#08080A;color:#F3EEE4;
+  font-family:"Pretendard Variable",Pretendard,sans-serif;line-height:1.75;letter-spacing:-.01em;}
+.t1 .wrap{max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,64px);}
+.t1 .hd{border-bottom:1px solid rgba(243,238,228,.10);}
+.t1 .hd__in{max-width:1280px;margin:0 auto;padding:20px clamp(20px,5vw,64px);
+  display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.t1 .lg{font-family:"Noto Serif KR",serif;font-weight:600;font-size:21px;letter-spacing:.14em;}
+.t1 .lg em{font-style:normal;color:#F02080;}
+.t1 nav{display:flex;gap:clamp(12px,2.2vw,30px);font-size:13px;color:rgba(243,238,228,.68);}
+.t1 nav span:first-child{color:#F3EEE4;}
+.t1 .lang{font-family:"Cormorant Garamond",serif;font-size:13px;letter-spacing:.16em;color:rgba(243,238,228,.5);}
+.t1 .hero{position:relative;min-height:min(80vh,720px);display:flex;align-items:flex-end;
+  padding:90px 0 56px;overflow:hidden;}
+.t1 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 26%;}
+.t1 .hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,8,10,0) 0%,rgba(8,8,10,.55) 45%,#08080A 100%);}
+.t1 .hero .wrap{position:relative;width:100%;}
+.t1 .eb{display:inline-block;font-family:"Cormorant Garamond",serif;font-size:11.5px;font-weight:500;
+  letter-spacing:.34em;text-transform:uppercase;color:#F02080;margin-bottom:20px;}
+.t1 h1{font-family:"Noto Serif KR",serif;font-weight:600;letter-spacing:-.022em;line-height:1.34;
+  font-size:clamp(30px,5.2vw,64px);margin-bottom:24px;}
+.t1 h1 em{font-style:normal;color:#F02080;}
+.t1 .lead{max-width:46ch;font-size:15.5px;color:rgba(243,238,228,.70);}
+.t1 .btns{display:flex;gap:11px;margin-top:30px;flex-wrap:wrap;}
+.t1 .btn{display:inline-flex;align-items:center;height:50px;padding:0 26px;border-radius:2px;
+  font-size:14px;font-weight:600;}
+.t1 .btn--a{background:#F02080;color:#08080A;}
+.t1 .btn--b{border:1px solid rgba(243,238,228,.22);}
+.t1 .mets{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(243,238,228,.10);
+  border-block:1px solid rgba(243,238,228,.10);margin-top:48px;}
+.t1 .met{background:#08080A;padding:24px 4px;text-align:center;}
+.t1 .met b{display:block;font-family:"Cormorant Garamond",serif;font-weight:500;
+  font-size:clamp(26px,3.4vw,42px);line-height:1.1;color:#C9A96A;}
+.t1 .met b.k{font-family:"Noto Serif KR",serif;font-weight:600;font-size:clamp(20px,2.6vw,32px);}
+.t1 .met span{display:block;margin-top:7px;font-size:11px;letter-spacing:.2em;color:rgba(243,238,228,.5);}
+.t1 .sec{padding:clamp(70px,9vw,120px) 0;background:#0C0C0E;}
+.t1 .sh{max-width:700px;margin-bottom:52px;}
+.t1 .sh h2{font-family:"Noto Serif KR",serif;font-weight:600;letter-spacing:-.022em;line-height:1.34;
+  font-size:clamp(24px,3.2vw,42px);margin-bottom:16px;}
+.t1 .sh h2 em{font-style:normal;color:#C9A96A;}
+.t1 .sh p{color:rgba(243,238,228,.70);font-size:15px;}
+.t1 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.t1 .card{background:#17171B;border:1px solid rgba(243,238,228,.10);overflow:hidden;}
+.t1 .card figure{aspect-ratio:3/4;position:relative;}
+.t1 .card img{width:100%;height:100%;object-fit:cover;}
+.t1 .card .no{position:absolute;top:13px;left:13px;font-family:"Cormorant Garamond",serif;
+  font-size:12px;letter-spacing:.2em;text-shadow:0 2px 10px rgba(0,0,0,.8);}
+.t1 .card .b{padding:20px 19px 24px;}
+.t1 .card h3{font-family:"Noto Serif KR",serif;font-weight:600;font-size:18px;line-height:1.5;margin-bottom:9px;}
+.t1 .card p{font-size:13.5px;color:rgba(243,238,228,.52);line-height:1.7;}
+
+/* ══════════════════════════════════════════════════════════════════════
+   02  名帖 MYEONGCHEOP — 차이킴 계열
+   구조: 상단바 없음 · 사진 없는 표지 · 중앙 1단 · 한자 번호 · 극단적 여백
+   ══════════════════════════════════════════════════════════════════════ */
+.t2{background:#0B0A08;color:#E8E2D4;
+  font-family:"Nanum Myeongjo",serif;font-weight:400;line-height:2.15;letter-spacing:.02em;}
+.t2 .corner{position:absolute;top:30px;z-index:3;font-family:"Marcellus",serif;
+  font-size:11px;letter-spacing:.3em;color:rgba(232,226,212,.42);}
+.t2 .corner.l{left:34px;}
+.t2 .corner.r{right:34px;}
+.t2 .cover{position:relative;min-height:88vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:80px 20px;}
+.t2 .cover .kr{font-family:"Song Myung",serif;font-size:clamp(28px,4.4vw,54px);
+  letter-spacing:.62em;text-indent:.62em;line-height:1.6;color:#F0EADC;}
+.t2 .rule{width:clamp(150px,22vw,300px);height:1px;background:rgba(232,226,212,.30);margin:34px 0 30px;}
+.t2 .cover .hj{font-family:"Song Myung",serif;font-size:clamp(13px,1.5vw,18px);
+  letter-spacing:.78em;text-indent:.78em;color:rgba(232,226,212,.52);}
+.t2 .cover .en{margin-top:54px;font-family:"Marcellus",serif;font-size:10.5px;
+  letter-spacing:.44em;text-indent:.44em;color:rgba(232,226,212,.34);}
+.t2 .seal{margin-top:56px;width:40px;height:40px;border:1px solid rgba(158,43,37,.75);
+  display:grid;place-items:center;font-family:"Song Myung",serif;font-size:17px;color:#B3392F;}
+.t2 .col{max-width:620px;margin:0 auto;padding:0 24px;text-align:center;}
+.t2 .blk{padding:clamp(70px,10vw,130px) 0;}
+.t2 .num{font-family:"Song Myung",serif;font-size:15px;letter-spacing:.5em;text-indent:.5em;
+  color:#B3392F;margin-bottom:26px;}
+.t2 .blk h2{font-family:"Song Myung",serif;font-weight:400;
+  font-size:clamp(20px,2.7vw,31px);letter-spacing:.2em;text-indent:.2em;line-height:1.85;margin-bottom:28px;}
+.t2 .blk p{font-size:14.5px;color:rgba(232,226,212,.62);letter-spacing:.03em;}
+.t2 figure{margin:52px auto 0;max-width:430px;}
+.t2 figure img{width:100%;}
+.t2 figcaption{margin-top:18px;font-family:"Marcellus",serif;font-size:10px;
+  letter-spacing:.34em;text-indent:.34em;color:rgba(232,226,212,.34);}
+.t2 .hr{width:1px;height:clamp(50px,7vw,90px);background:rgba(232,226,212,.22);margin:0 auto;}
+.t2 .end{padding:clamp(70px,9vw,120px) 0 clamp(80px,10vw,140px);text-align:center;}
+.t2 .end .a{font-family:"Song Myung",serif;font-size:clamp(15px,1.8vw,21px);
+  letter-spacing:.3em;text-indent:.3em;line-height:2.4;color:rgba(232,226,212,.76);}
+
+/* ══════════════════════════════════════════════════════════════════════
+   03  額 AEKJA — The Row / 국립현대미술관 계열
+   구조: 좌햄버거·중앙로고 대칭바 · 흰 바탕 · 액자 사진 · 비대칭 2열 · 인덱스표
+   ══════════════════════════════════════════════════════════════════════ */
+.t3{background:#fff;color:#111214;
+  font-family:"Gothic A1",sans-serif;font-weight:300;line-height:1.85;letter-spacing:0;}
+.t3 .hd{position:sticky;top:44px;z-index:8;background:#fff;
+  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+  padding:20px clamp(18px,3vw,40px);border-bottom:1px solid #E6E4E0;}
+.t3 .bg{width:20px;display:grid;gap:5px;}
+.t3 .bg i{height:1px;background:#111214;display:block;}
+.t3 .lg{font-family:"Jost",sans-serif;font-weight:400;font-size:14px;
+  letter-spacing:.42em;text-indent:.42em;text-align:center;white-space:nowrap;}
+.t3 .rt{justify-self:end;display:flex;gap:18px;font-family:"Jost",sans-serif;
+  font-size:11.5px;letter-spacing:.2em;color:#6B6A66;}
+.t3 .frame{padding:clamp(18px,3vw,40px);}
+.t3 .frame figure{position:relative;aspect-ratio:16/9;overflow:hidden;background:#F2F0EC;}
+.t3 .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;}
+.t3 .cap{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  margin-top:16px;flex-wrap:wrap;}
+.t3 .cap h1{font-family:"Gothic A1",sans-serif;font-weight:300;font-size:clamp(15px,1.5vw,19px);
+  letter-spacing:.02em;line-height:1.8;max-width:34ch;}
+.t3 .cap .m{font-family:"Jost",sans-serif;font-size:10.5px;letter-spacing:.26em;
+  color:#8A8983;text-transform:uppercase;}
+.t3 .more{display:inline-block;margin-top:14px;font-family:"Jost",sans-serif;font-size:11px;
+  letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid #111214;padding-bottom:3px;}
+.t3 .duo{display:grid;grid-template-columns:1.32fr 1fr;gap:clamp(20px,3.4vw,56px);
+  padding:clamp(56px,8vw,120px) clamp(18px,3vw,40px);align-items:start;}
+.t3 .duo figure{aspect-ratio:4/5;overflow:hidden;background:#F2F0EC;}
+.t3 .duo img{width:100%;height:100%;object-fit:cover;}
+.t3 .duo .r{padding-top:clamp(40px,8vw,132px);}
+.t3 .duo .r figure{aspect-ratio:3/4;}
+.t3 h2{font-family:"Jost",sans-serif;font-weight:300;font-size:clamp(17px,1.9vw,23px);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;}
+.t3 .kl{font-size:14px;color:#55544F;max-width:32ch;}
+.t3 .txt{margin-top:26px;}
+.t3 .idx{border-top:1px solid #111214;margin:0 clamp(18px,3vw,40px) clamp(70px,9vw,120px);}
+.t3 .idx a{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;
+  padding:22px 2px;border-bottom:1px solid #E6E4E0;transition:.2s;}
+.t3 .idx a:hover{padding-left:12px;color:#6B6A66;}
+.t3 .idx .n{font-family:"Jost",sans-serif;font-size:11px;letter-spacing:.2em;color:#9B9A94;}
+.t3 .idx .ti{font-size:clamp(15px,1.6vw,19px);font-weight:400;letter-spacing:.01em;}
+.t3 .idx .e{font-family:"Jost",sans-serif;font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:#9B9A94;}
+
+/* ══════════════════════════════════════════════════════════════════════
+   04  丹 DAN — 잡지 대형타이포 계열
+   구조: 좌측 세로 사이드레일 · 단색 배경 · 12vw 제목 · 글자 사이 사진띠 · 어긋난 그리드
+   ══════════════════════════════════════════════════════════════════════ */
+.t4{background:#5E0A2E;color:#F6EDE0;position:relative;
+  font-family:"IBM Plex Sans KR",sans-serif;font-weight:300;line-height:1.7;}
+.t4 .rail{position:absolute;top:0;left:0;width:64px;height:100%;z-index:4;
+  border-right:1px solid rgba(246,237,224,.20);display:flex;flex-direction:column;
+  align-items:center;justify-content:space-between;padding:26px 0 30px;}
+.t4 .rail .v{writing-mode:vertical-rl;font-family:"Archivo Black",sans-serif;font-size:11px;
+  letter-spacing:.3em;text-transform:uppercase;}
+.t4 .rail .d{display:grid;gap:6px;}
+.t4 .rail .d i{width:5px;height:5px;border-radius:50%;background:#F6EDE0;display:block;}
+.t4 .rail .y{writing-mode:vertical-rl;font-family:"Archivo Black",sans-serif;font-size:10px;
+  letter-spacing:.24em;color:rgba(246,237,224,.5);}
+.t4 .body{margin-left:64px;}
+.t4 .top{display:flex;justify-content:space-between;align-items:baseline;gap:20px;
+  padding:26px clamp(20px,3vw,44px) 0;font-family:"Archivo Black",sans-serif;
+  font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;}
+.t4 .top span{color:rgba(246,237,224,.55);}
+.t4 .big{padding:clamp(22px,3vw,44px) clamp(20px,3vw,44px) 0;}
+.t4 .big h1{font-family:"Hahmlet",serif;font-weight:800;font-size:clamp(46px,11.4vw,168px);
+  line-height:.94;letter-spacing:-.052em;}
+.t4 .band{height:clamp(96px,13vw,190px);overflow:hidden;margin:clamp(8px,1.2vw,18px) 0;}
+.t4 .band img{width:100%;height:100%;object-fit:cover;object-position:50% 34%;}
+.t4 .meta{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;
+  padding:clamp(24px,3.4vw,50px) clamp(20px,3vw,44px) 0;flex-wrap:wrap;}
+.t4 .meta p{max-width:40ch;font-size:14.5px;color:rgba(246,237,224,.78);}
+.t4 .meta .kpi{display:flex;gap:clamp(20px,3vw,48px);}
+.t4 .kpi b{display:block;font-family:"Archivo Black",sans-serif;font-size:clamp(24px,3.2vw,44px);
+  line-height:1;letter-spacing:-.02em;}
+.t4 .kpi span{display:block;margin-top:6px;font-family:"Archivo Black",sans-serif;
+  font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,237,224,.55);}
+.t4 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,26px);
+  padding:clamp(48px,7vw,108px) clamp(20px,3vw,44px) clamp(60px,8vw,120px);align-items:start;}
+.t4 .it:nth-child(2){margin-top:clamp(34px,6vw,96px);}
+.t4 .it:nth-child(3){margin-top:clamp(14px,2.6vw,42px);}
+.t4 .it figure{overflow:hidden;background:#47081F;}
+.t4 .it:nth-child(1) figure{aspect-ratio:3/4;}
+.t4 .it:nth-child(2) figure{aspect-ratio:1/1;}
+.t4 .it:nth-child(3) figure{aspect-ratio:2/3;}
+.t4 .it img{width:100%;height:100%;object-fit:cover;}
+.t4 .it .n{font-family:"Archivo Black",sans-serif;font-size:clamp(30px,4vw,58px);
+  line-height:1;margin-bottom:10px;-webkit-text-stroke:1.2px #F6EDE0;color:transparent;}
+.t4 .it h3{font-family:"Hahmlet",serif;font-weight:700;font-size:clamp(16px,1.7vw,22px);
+  letter-spacing:-.028em;line-height:1.35;margin-top:16px;}
+.t4 .it p{margin-top:8px;font-size:13px;color:rgba(246,237,224,.62);}
+
+/* ═══════════════ 레퍼런스 각주 ═══════════════ */
+.ref{max-width:1400px;margin:0 auto;padding:44px clamp(14px,3vw,32px) 90px;}
+.ref h4{font-size:10.5px;letter-spacing:.28em;color:rgba(237,234,227,.38);
+  font-weight:400;margin-bottom:20px;}
+.ref__g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.ref__c{border:1px solid rgba(255,255,255,.12);padding:20px 18px 22px;cursor:pointer;transition:.18s;}
+.ref__c:hover{border-color:rgba(255,255,255,.38);background:rgba(255,255,255,.03);}
+.ref__c > b{display:block;font-size:14px;margin-bottom:4px;}
+.ref__c .sub{font-size:11.5px;color:rgba(237,234,227,.42);margin-bottom:12px;}
+.ref__c .li{font-size:12.5px;color:rgba(237,234,227,.66);line-height:1.75;}
+.ref__c .li i{font-style:normal;color:rgba(237,234,227,.34);}
+.ref__c .li b{font-weight:600;color:#F3EEE4;}
+.ref__c .fo{margin-top:12px;padding-top:11px;border-top:1px solid rgba(255,255,255,.10);
+  font-size:11px;color:rgba(237,234,227,.44);line-height:1.7;}
+.ref__c .sw{display:flex;gap:5px;margin-top:11px;}
+.ref__c .sw i{width:16px;height:16px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.2);}
+
+@media (max-width:900px){
+  .t1 nav,.t4 .rail{display:none;}
+  .t4 .body{margin-left:0;}
+  .t1 .cards,.t3 .duo,.t4 .grid,.ref__g{grid-template-columns:1fr;}
+  .t1 .mets{grid-template-columns:repeat(2,1fr);}
+  .t3 .duo .r{padding-top:0;}
+  .t4 .it{margin-top:0 !important;}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="bar__in">
+    <span class="bar__lab">THEME</span>
+    <div class="picks">
+      <button class="pick" data-k="1" aria-pressed="true"><i style="background:#F02080"></i>01 宮 Noir <span style="opacity:.5">· 현재</span></button>
+      <button class="pick" data-k="2" aria-pressed="false"><i style="background:#B3392F"></i>02 名帖</button>
+      <button class="pick" data-k="3" aria-pressed="false"><i style="background:#fff"></i>03 額</button>
+      <button class="pick" data-k="4" aria-pressed="false"><i style="background:#5E0A2E;box-shadow:0 0 0 1px rgba(255,255,255,.4)"></i>04 丹</button>
+    </div>
+    <span class="bar__note" id="note"></span>
+  </div>
+</div>
+
+<!-- ══════════ 01 宮 NOIR ══════════ -->
+<section class="t t1 on" data-t="1">
+  <header class="hd"><div class="hd__in">
+    <div class="lg">한복<em>궁</em></div>
+    <nav><span>아틀리에</span><span>한복패션쇼·궁중한복</span><span>모델선발대회·화보촬영</span><span>혼주한복</span><span>갤러리</span><span>오시는 길</span></nav>
+    <div class="lang">KO / EN</div>
+  </div></header>
+
+  <div class="hero">
+    <img src="assets/img/hero/hero-01-royal-black.jpg" alt="">
+    <div class="wrap">
+      <span class="eb">Hanbok Atelier · Since Incheon</span>
+      <h1>전세계를 누비며<br>무대에서 증명한 한복,<br><em>가장 귀한 날</em>에<br>입혀 드립니다.</h1>
+      <p class="lead">밴쿠버 패션위크부터 워싱턴 케네디홀, 두바이 VVIP 쇼까지 11개국 무대에 오른 형과 색을, 혼례와 예복에 그대로 옮깁니다.</p>
+      <div class="btns"><a class="btn btn--a" href="#">상담 예약하기</a><a class="btn btn--b" href="#">작품 둘러보기</a></div>
+      <div class="mets">
+        <div class="met"><b>11</b><span>개국 무대</span></div>
+        <div class="met"><b>1,000+</b><span>한복 모델</span></div>
+        <div class="met"><b class="k">眞善美</b><span>2023 전 부문</span></div>
+        <div class="met"><b class="k">大賞</b><span>2026 인코리아</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec"><div class="wrap">
+    <div class="sh">
+      <span class="eb">Collections</span>
+      <h2>무대에서 <em>검증된 형</em>,<br>가장 귀한 날의 옷으로</h2>
+      <p>런웨이에서 움직임을 견딘 실루엣과 조명 아래 살아남은 색. 한복궁이 세 가지 자리에 내어 드리는 옷입니다.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><figure><span class="no">01</span><img src="assets/img/runway/runway-03-sm.jpg" alt=""></figure>
+        <div class="b"><h3>한복패션쇼 · 전통혼례<br>궁중한복 · 웨딩한복</h3><p>원삼·활옷·당의의 법도를 지키되 오늘의 몸과 오늘의 예식장에 맞게 다시 짓습니다.</p></div></article>
+      <article class="card"><figure><span class="no">02</span><img src="assets/img/pageant/pageant-05-sm.jpg" alt=""></figure>
+        <div class="b"><h3>한복모델선발대회<br>국제미인대회 · 화보촬영</h3><p>1,000명이 넘는 한복 모델이 선택한 아틀리에. 출전자의 장단점에 맞춰 디자인을 제안합니다.</p></div></article>
+      <article class="card"><figure><span class="no">03</span><img src="assets/img/honju/honju-30-sm.jpg" alt=""></figure>
+        <div class="b"><h3>최고급<br>혼주한복</h3><p>최고급 실크와 오간자만 씁니다. 속치마·신발·가방·노리개까지 한 벌로, 따로 받지 않습니다.</p></div></article>
+    </div>
+  </div></div>
+</section>
+
+<!-- ══════════ 02 名帖 MYEONGCHEOP ══════════ -->
+<section class="t t2" data-t="2">
+  <div class="cover">
+    <span class="corner l">MENU</span><span class="corner r">KO &nbsp;·&nbsp; EN</span>
+    <div class="kr">한복궁</div>
+    <div class="rule"></div>
+    <div class="hj">韓服宮</div>
+    <div class="en">HANBOK ATELIER · INCHEON</div>
+    <div class="seal">宮</div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="col">
+    <div class="blk">
+      <div class="num">一</div>
+      <h2>무대에서 증명한 한복</h2>
+      <p>밴쿠버 패션위크, 워싱턴 케네디홀, 두바이 VVIP 쇼.<br>열한 나라의 무대에서 형과 색을 먼저 시험했습니다.<br>그 옷을 가장 귀한 날에 입혀 드립니다.</p>
+      <figure><img src="assets/img/traditional/traditional-04-sm.jpg" alt="">
+        <figcaption>HWAROT · TRADITIONAL WEDDING</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="col">
+    <div class="blk">
+      <div class="num">二</div>
+      <h2>천 명의 모델이 고른 옷</h2>
+      <p>대한민국한복모델선발대회 지정 한복.<br>이천이십삼년 진·선·미 전 부문,<br>이천이십육년 인코리아 대상.</p>
+      <figure style="max-width:330px"><img src="assets/img/pageant/pageant-06-sm.jpg" alt="">
+        <figcaption>MODEL CONTEST · PAGEANT</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="col">
+    <div class="blk">
+      <div class="num">三</div>
+      <h2>혼주의 자리에 맞는 격</h2>
+      <p>최고급 실크와 오간자.<br>속치마와 신발, 가방과 노리개까지 한 벌로.<br>따로 값을 매기지 않습니다.</p>
+      <figure style="max-width:390px"><img src="assets/img/honju/honju-03-sm.jpg" alt="">
+        <figcaption>HONJU · MOTHER OF THE BRIDE</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="hr"></div>
+  <div class="end"><div class="col">
+    <div class="a">인천 부평구 평천로 381<br>예준빌딩 이층<br>·<br>예약제</div>
+  </div></div>
+</section>
+
+<!-- ══════════ 03 額 AEKJA ══════════ -->
+<section class="t t3" data-t="3">
+  <header class="hd">
+    <div class="bg"><i></i><i></i><i></i></div>
+    <div class="lg">HANBOK GOONG</div>
+    <div class="rt"><span>SEARCH</span><span>KO</span></div>
+  </header>
+
+  <div class="frame">
+    <figure><img src="assets/img/runway/runway-35.jpg" alt=""></figure>
+    <div class="cap">
+      <h1>전세계 열한 나라의 무대에서 증명한 형과 색을, 가장 귀한 날의 옷으로 옮깁니다.</h1>
+      <div style="text-align:right">
+        <div class="m">Vancouver Fashion Week 2025 S/S</div>
+        <a class="more" href="#">View Collection</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="duo">
+    <div class="l">
+      <figure><img src="assets/img/honju/honju-03-sm.jpg" alt=""></figure>
+      <div class="txt">
+        <h2>Honju</h2>
+        <p class="kl">최고급 실크와 오간자. 속치마·신발·가방·노리개까지 한 벌로 드리고, 따로 값을 매기지 않습니다.</p>
+      </div>
+    </div>
+    <div class="r">
+      <figure><img src="assets/img/court/court-04-sm.jpg" alt=""></figure>
+      <div class="txt">
+        <h2>Royal Court</h2>
+        <p class="kl">원삼·활옷·당의의 법도를 지키되, 오늘의 몸과 오늘의 예식장에 맞게 다시 짓습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="idx">
+    <a href="#"><span class="n">01</span><span class="ti">한복패션쇼 · 궁중한복</span><span class="e">Runway &amp; Court</span></a>
+    <a href="#"><span class="n">02</span><span class="ti">전통혼례 · 웨딩한복</span><span class="e">Traditional &amp; Bridal</span></a>
+    <a href="#"><span class="n">03</span><span class="ti">한복모델선발대회 · 화보촬영</span><span class="e">Contest &amp; Editorial</span></a>
+    <a href="#"><span class="n">04</span><span class="ti">최고급 혼주한복</span><span class="e">Mother of the Bride</span></a>
+    <a href="#"><span class="n">05</span><span class="ti">아틀리에 · 오시는 길</span><span class="e">Atelier &amp; Visit</span></a>
+  </div>
+</section>
+
+<!-- ══════════ 04 丹 DAN ══════════ -->
+<section class="t t4" data-t="4">
+  <div class="rail">
+    <span class="v">Hanbok Goong</span>
+    <span class="d"><i></i><i></i><i></i></span>
+    <span class="y">Est. Incheon</span>
+  </div>
+  <div class="body">
+    <div class="top"><span>Atelier — Incheon</span><span>11 Countries / 1,000+ Models</span><span>KO · EN</span></div>
+
+    <div class="big"><h1>가장 귀한</h1></div>
+    <div class="band"><img src="assets/img/runway/runway-35.jpg" alt=""></div>
+    <div class="big"><h1>날에 입혀</h1></div>
+    <div class="big"><h1>드립니다</h1></div>
+
+    <div class="meta">
+      <p>밴쿠버 패션위크부터 워싱턴 케네디홀, 두바이 VVIP 쇼까지. 무대에서 증명한 형과 색을 혼례와 예복에 그대로 옮깁니다.</p>
+      <div class="kpi">
+        <div><b>11</b><span>Countries</span></div>
+        <div><b>1,000+</b><span>Models</span></div>
+        <div><b>2026</b><span>Grand Prize</span></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="it"><div class="n">01</div><figure><img src="assets/img/court/court-04-sm.jpg" alt=""></figure>
+        <h3>한복패션쇼 · 궁중한복</h3><p>원삼·활옷·당의를 오늘의 몸으로.</p></article>
+      <article class="it"><div class="n">02</div><figure><img src="assets/img/pageant/pageant-06-sm.jpg" alt=""></figure>
+        <h3>모델선발대회 · 화보촬영</h3><p>천 명이 넘는 한복 모델의 선택.</p></article>
+      <article class="it"><div class="n">03</div><figure><img src="assets/img/honju/honju-03-sm.jpg" alt=""></figure>
+        <h3>최고급 혼주한복</h3><p>실크와 오간자, 한 벌 그대로.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 레퍼런스 ══════════ -->
+<div class="ref">
+  <h4>레퍼런스 — 클릭하면 위쪽이 그 테마로 바뀝니다</h4>
+  <div class="ref__g" id="refg"></div>
+</div>
+
+<script>
+const T={
+ 1:{n:'01 宮 Noir',sub:'현재 사이트',ref:'현행 유지',
+    li:['전면 사진 히어로 + 좌측정렬 대형 제목','가로 상단 내비게이션','3열 균등 카드 그리드','지표 4칸 띠'],
+    fo:'Noto Serif KR · Pretendard · Cormorant Garamond',p:['#08080A','#F02080','#C9A96A']},
+ 2:{n:'02 名帖 명첩',sub:'차이킴 tchaikim.co.kr',ref:'차이킴',
+    li:['<b>표지에 사진이 없다</b> — 이름만','전부 중앙 정렬, 1단 620px','一 二 三 한자 번호로 구분','사진은 작게, 본문 아래 한 장씩'],
+    fo:'Song Myung · Nanum Myeongjo · Marcellus',p:['#0B0A08','#B3392F','#E8E2D4']},
+ 3:{n:'03 額 액자',sub:'The Row · 국립현대미술관',ref:'The Row / MMCA',
+    li:['<b>흰 바탕</b>, 사진은 여백 안 액자','좌 햄버거·중앙 로고 대칭 상단바','제목이 아주 작다 — 사진이 말한다','좌우 높이가 어긋난 2열'],
+    fo:'Gothic A1 · Jost (전부 산세리프)',p:['#FFFFFF','#111214','#8A8983']},
+ 4:{n:'04 丹 단',sub:'잡지 대형 타이포',ref:'Jacquemus 계열',
+    li:['<b>글자가 주인공</b> — 제목 11vw','제목 줄 사이로 사진 띠가 지나감','좌측 세로 사이드 레일 내비','크기·높이가 제각각인 그리드'],
+    fo:'Hahmlet · IBM Plex Sans KR · Archivo Black',p:['#5E0A2E','#F6EDE0','#47081F']}
+};
+const note=document.getElementById('note');
+function set(k){
+  document.querySelectorAll('.t').forEach(s=>s.classList.toggle('on',s.dataset.t===k));
+  document.querySelectorAll('.pick').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
+  const t=T[k];
+  note.innerHTML='<b>'+t.n+'</b> &nbsp;레퍼런스 '+t.ref+' &nbsp;·&nbsp; '+t.fo;
+  try{localStorage.setItem('hbg-t2',k);}catch(e){}
+  window.scrollTo(0,0);
+}
+document.getElementById('refg').innerHTML=Object.entries(T).map(([k,t])=>
+ '<div class="ref__c" data-k="'+k+'"><b>'+t.n+'</b><div class="sub">레퍼런스 · '+t.sub+'</div>'+
+ '<div class="li">'+t.li.map(x=>'<i>—</i> '+x).join('<br>')+'</div>'+
+ '<div class="sw">'+t.p.map(c=>'<i style="background:'+c+'"></i>').join('')+'</div>'+
+ '<div class="fo">'+t.fo+'</div></div>').join('');
+
+document.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)set(b.dataset.k);});
+document.addEventListener('keydown',e=>{if('1234'.includes(e.key))set(e.key);});
+let s='1';try{s=localStorage.getItem('hbg-t2')||'1';}catch(e){}
+set(T[s]?s:'1');
+</script>
+</body>
+</html>

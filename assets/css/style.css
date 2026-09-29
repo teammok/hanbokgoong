@@ -834,3 +834,37 @@ h1,h2,h3,h4{font-family:var(--font-serif);font-weight:500;line-height:1.34;lette
   .lb__nav{width:44px;height:44px;}
   .feat__badge{left:0;}
 }
+
+/* --------------------------------------------------------------------------
+   갤러리 로딩 표시 — 사진이 도착하기 전 칸이 '빈 칸'이 아니라
+   '불러오는 중'으로 읽히게 한다. 사진이 뜨면 맥박을 끈다.
+   -------------------------------------------------------------------------- */
+.gal-note{
+  display:flex;align-items:center;gap:9px;
+  margin:-6px 0 22px;font-size:13px;line-height:1.7;color:var(--ivory-52);
+}
+.gal-note::before{
+  content:"";flex:none;width:11px;height:11px;border-radius:50%;
+  border:1.5px solid var(--seal);border-right-color:transparent;
+  animation:gal-spin 900ms linear infinite;
+}
+@keyframes gal-spin{to{transform:rotate(360deg)}}
+
+.gal__item::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background:linear-gradient(110deg,var(--ink-700) 30%,var(--ink-500) 50%,var(--ink-700) 70%);
+  background-size:220% 100%;
+  animation:gal-sheen 1.5s ease-in-out infinite;
+}
+@keyframes gal-sheen{0%{background-position:120% 0}100%{background-position:-120% 0}}
+.gal__item.is-loaded::before{display:none;}
+.gal__item img{position:relative;z-index:1;opacity:0;transition:opacity .45s var(--ease),transform 1s var(--ease);}
+.gal__item.is-loaded img{opacity:1;}
+
+@media (prefers-reduced-motion:reduce){
+  .gal-note::before,.gal__item::before{animation:none;}
+  .gal__item img{transition:none;}
+}
+
+/* picture 래퍼는 레이아웃에 관여하지 않는다 — img 규칙이 그대로 살아야 한다 */
+picture{display:contents;}

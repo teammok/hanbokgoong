@@ -64,7 +64,9 @@
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    // threshold 는 0 이어야 한다. 갤러리처럼 화면보다 키가 큰 요소는
+    // 12% 가 한 번도 보이지 않아 영원히 나타나지 않는다.
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
     revealables.forEach(function (el) { io.observe(el); });
   } else {
     revealables.forEach(function (el) { el.classList.add('is-in'); });
@@ -286,6 +288,19 @@
     if (track.getAttribute('data-cloned')) return;
     track.innerHTML += track.innerHTML;
     track.setAttribute('data-cloned', '1');
+  });
+
+  /* ------------------------------------------------------------------
+     8-1. 갤러리 사진 도착 표시
+     사진이 뜨기 전 칸은 맥박치는 자리표시자로 두고, 도착하면 끈다.
+     ------------------------------------------------------------------ */
+  $$('.gal__item').forEach(function (item) {
+    var img = $('img', item);
+    if (!img) { item.classList.add('is-loaded'); return; }
+    if (img.complete && img.naturalWidth) { item.classList.add('is-loaded'); return; }
+    var done = function () { item.classList.add('is-loaded'); };
+    img.addEventListener('load', done, { once: true });
+    img.addEventListener('error', done, { once: true });   // 실패해도 맥박은 멈춘다
   });
 
   /* ------------------------------------------------------------------
