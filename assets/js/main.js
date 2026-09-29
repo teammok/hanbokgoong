@@ -304,6 +304,38 @@
   });
 
   /* ------------------------------------------------------------------
+     8-2. 갤러리 로딩 안내
+     평소엔 감춰 둔다. 갤러리가 화면에 들어온 뒤로도 2.5초 안에
+     첫 줄 사진이 안 오면 그때만 보여 준다 — 느린 회선에서만 뜬다.
+     ------------------------------------------------------------------ */
+  var galNote = $('.gal-note');
+  var firstGal = $('.gal');
+  if (galNote && firstGal && 'IntersectionObserver' in window) {
+    galNote.hidden = true;
+    var watch = $('.gal__item', firstGal).slice(0, 8);
+    var pending = function () {
+      return watch.filter(function (i) { return !i.classList.contains('is-loaded'); }).length;
+    };
+    var nio = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      nio.disconnect();
+      var t = setTimeout(function () { if (pending()) galNote.hidden = false; }, 2500);
+      watch.forEach(function (i) {
+        var im = $('img', i);
+        if (!im) return;
+        var settle = function () {
+          if (pending()) return;
+          clearTimeout(t);
+          galNote.hidden = true;
+        };
+        im.addEventListener('load', settle, { once: true });
+        im.addEventListener('error', settle, { once: true });
+      });
+    }, { threshold: 0 });
+    nio.observe(firstGal);
+  }
+
+  /* ------------------------------------------------------------------
      9. 현재 연도
      ------------------------------------------------------------------ */
   $$('[data-year]').forEach(function (el) {
